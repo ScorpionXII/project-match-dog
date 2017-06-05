@@ -15,7 +15,9 @@ const homeRoutes = require('./routes/homeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const dogRoutes = require('./routes/dogRoutes');
 
-mongoose.connect('mongodb://localhost/project-match-dog');
+//mongoose.connect('mongodb://localhost/project-match-dog');
+require('dotenv').load();
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
